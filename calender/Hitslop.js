@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity,
   SafeAreaView,
-  Image
+  Image,
 } from "react-native";
 
 export default function HitSlop() {
@@ -16,7 +16,6 @@ export default function HitSlop() {
         <TouchableOpacity
           onPress={() => alert("Hello Nikki! How are you")}
           hitSlop={{ top: 50, bottom: 50, left: 50, right: 50 }}
-         
         >
           {/* <Text style={{ fontSize: 26, textAlign: "center", color: "white" }}>
             {" "}
@@ -24,11 +23,17 @@ export default function HitSlop() {
           </Text> */}
           <Image
             source={{
-              uri: "https://i.pinimg.com/originals/87/1d/13/871d13b8dcbea5cddd3878b172f5480f.gif",
+              uri: "https://www.noody.de/wp-content/uploads/2020/07/hooray.gif",
             }}
-            style={{ width: 200, height: 250,  marginTop: 20 }}
+            style={{ width: 300, height: 450, marginTop: 20 }}
           />
         </TouchableOpacity>
+      </View>
+      <View style={styleSheet.eye}>
+        <TouchableOpacity
+          onPress={() => alert("Hey Nikki Please don't touch my nose")}
+          hitSlop={{ top: 50, bottom: 50, left: 50, right: 50 }}
+        ></TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -40,13 +45,21 @@ const styleSheet = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  eye: {
+    position: "absolute",
+    // borderWidth: 4,
+    height: 50,
+    width: 50,
+    borderColor: "red",
+    top: 350,
+  },
 
-//   buttonStyle: {
-//     alignItems: "center",
-//     justifyContent: "center",
-//     backgroundColor: "#00C853",
-//     width: 350,
-//     height: 100,
-//     borderRadius: 5,
-//   },
+  //   buttonStyle: {
+  //     alignItems: "center",
+  //     justifyContent: "center",
+  //     backgroundColor: "#00C853",
+  //     width: 350,
+  //     height: 100,
+  //     borderRadius: 5,
+  //   },
 });
